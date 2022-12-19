@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "77279ed1-67ab-4dc5-86f7-89876fec04e7",
+		"name": "StudentManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22667464"
+	},
+	"item": [
+		{
+			"name": "addStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Noman\",\r\n    \"grade\" : \"KG1\",\r\n    \"mobileNumber\" : \"0506623027\",\r\n    \"schoolName\" : \"GEMS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/students/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"students",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/students/student/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"students",
+						"student",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
