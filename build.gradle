@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.org'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'eclipse'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.0'
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//implementation("io.springfox:springfox-boot-starter:3.0.0")
+	implementation 'org.springdoc:springdoc-openapi-ui:1.2.32'
+	//implementation("io.springfox:springfox-swagger-ui:3.0.0")
+	//implementation("io.springfox:springfox-swagger2:3.0.0")
+	implementation("io.springfox:springfox-boot-starter:3.0.0")
+	implementation 'org.springframework.boot:spring-boot-starter-parent:2.4.0'
+	//implementation 'com.org:boot-swagger-3:0.0.1-SNAPSHOT'
+	//implementation("io.springfox:springfox-swagger-ui:3.0.0")
+	//implementation("io.springfox:springfox-schema:3.0.0")
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
